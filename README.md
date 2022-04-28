@@ -1,3 +1,7 @@
+# Members
+- Anna Aleynik
+- Konstantin Maximov
+
 # go-simple-upload-server
 Simple HTTP server to save artifacts
 

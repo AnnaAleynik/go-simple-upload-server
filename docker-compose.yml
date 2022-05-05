@@ -1,15 +1,25 @@
 version: "3.6"
 
+networks:
+  file-uploader-network:
+
 services:
   web:
     image: nginx
     volumes:
-    - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - file-uploader-network
+    ports:
+      - "80:80"
+      - "443:443"
   uploader:
     # image: mayth/simple-upload-server
     build: .
-    ports:
-      - "25478:25478"
+    networks:
+      - file-uploader-network
+    expose:
+      - "25478"
     command:
       - -token
       - c21beeafd4289e8ff916666666692333

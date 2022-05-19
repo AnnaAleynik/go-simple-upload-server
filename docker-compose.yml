@@ -11,8 +11,7 @@ services:
     networks:
       - file-uploader-network
     ports:
-      - "80:80"
-      - "443:443"
+      - "8888:80"
   uploader:
     # image: mayth/simple-upload-server
     build: .
